@@ -83,6 +83,8 @@ Pre-positioning was the tell. This was not an opportunistic hijack; the operator
 
 **Victim surface.** Third-party scan corpus (urlscan) for `1688360.cc` grew past **230 scans** at ~9/hour during peak analyst coverage, and contacted-domain scans confirmed poisoned bundles reaching: `zoom.com`, `gitlab.com`, `smartsheet.com`, `scheels.com`, `klm.com`, `cnn.com`, `americangirl.com`, `hootsuite.com`, `intuit.com`, `managebuilding.com`, `loftliving.com`, `ow.ly`, `bbc.com` — plus cluster hosts `moiubpagedocs.cc` / `blogforge.vu`. ✅ Confirmed via scan corpus. The BBC observation is the cleanest pin on the exposure window: an Intuit marketing link scan at **19:10Z** showed the BBC page still contacting `1688360.cc` (25–32 unique IPs, 138–180 requests) — the poisoned bundle was still being served to a top-10 global news site **4 hours after disclosure**.
 
+**Cluster expansion (post-publication).** The iOS-stage host `eil786npto9u5bq.icu` turned out to be one of **two domains on the same freshly-provisioned Singapore GCP host** (`34.87.36.58`, AS396982): a second random-string domain **`1y69gy2mdzaltz1.icu`** resolves there too, its TLS certificate issued at **15:57:01Z — seven seconds after `eil786...`'s own cert (15:56:54Z)**. Same-name family, same issuer family (YE1/YE2), same provisioning batch. ✅ Confirmed via scan corpus + cert telemetry. The operator's own tooling also predates the campaign: the `JIUJIU888/weifile.html` loader shell on the iOS host carries **`Last-Modified: 28 Jun 2026`** — the kit's admin/loader pages were built **~5 months before the Optimizely CDN was hit**. ✅ Confirmed from HTTP headers. `weifile.html` is a 346-byte shell whose only content is `<script src="index.js">` — it boots the obfuscated 50.7 KB `index.js`, and that execution beacons a **second IP / second country** (scan-level 2-IP count), consistent with the leaked telemetry domain `l7bcsnwc7nzr3uo.icu`. ✅ Confirmed at scan level; exact beacon target unconfirmed (login-gated scan detail).
+
 ## Link 5 — The money chain
 
 The skimmer wallets are not static bait. They are **live consolidation infrastructure**, and on-chain forensics showed the gang working in real time.
@@ -104,14 +106,33 @@ The skimmer wallets are not static bait. They are **live consolidation infrastru
 
 **TON** — uninitialized, zero balance (the public article listed its raw address). ✅ Confirmed.
 
+### The engine behind the sweep (structure, corrected post-publication)
+
+Deeper on-chain tracing changed the picture — and it matters for attribution. The TRX sink `TD64NDwZ...` is **not a campaign-born wallet**. It is a **long-running Tron consolidation sink** holding **~461,900 USDT (~$462k)** at the last check, with a layered money flow behind it:
+
+```
+funders (TWnudLaFP1BM, TDnC6Qq6xus, TFRQz28W, TJUrkoyaEg, TXufTz8WDPgY)
+   → intermediates (TH8kxgUv active since Aug, TLFxe3jyg since Nov 2)
+      → sink TD64NDwZ (no outbound in the latest 50 transactions)
+```
+
+Evidence: ✅ Confirmed on-chain.
+- `TLFxe3jyg...` was depositing into the sink **on Nov 12** — four days before the Optimizely CDN story went public (5,000; 2,000 USDT), then 41,000 USDT on Nov 16.
+- `TH8kxgUv...` moved 98k–99k USDT chunks in **early August** — months before the campaign — via funders `TDnC6Qq6xus...` and `TFRQz28W...`.
+- The 50,000 / 41,000 / 20,000 USDT deposits at 22:20–22:28Z on Nov 16 are **laundering-layer movements, not live skimmer harvests**. Round, deliberate transfers between known layers.
+- The sink's balance (~462k) and current inflow rate (~97k USDT/hr in one 98-minute window) describe the **pre-existing Tron cash engine**, which the OPTIMJACK collector feeds, not the campaign's own harvest volume.
+- The OPTIMJACK-specific TRX connection remains the collector `THvs6p56...` (created **Mar 2026**) sweeping 546.8 USDT into the same sink at ~13:05Z on Nov 16. ✅
+
+⚠️ **Attribution caveat, kept honest:** the ETH side is campaign-timed (collector first active Nov 12, 4,310.8 USDC sweep on Nov 16, 0.829 ETH → HitBTC at 19:40Z). The TRX sink's ~$462k predates and overwhelms the campaign's visible TRX volume. Either the same gang runs a long-term Tron clipper/cash operation (plausible — their own collector `THvs6p56` predates the campaign by 8 months), or the OPTIMJACK loot feeds shared infrastructure. **Unproven either way** — labeled as-is.
+
 ### The chain stayed live after disclosure
 
-Hours after the bundles were purged and the story went public, the money engine kept running (checks 23:03Z, 16 Nov):
+The engines kept running hours after the bundles were purged (checks 23:03Z, 16 Nov):
 - ETH sweep `0x7005b45...` had moved **0.829 ETH to HitBTC's hot wallet** (`0x80787af194C33b74a811f5e5c549316269d7Ee1A`) at **19:40Z** — an exchange deposit, i.e. a cash-out path — and took in ~2.2 ETH in dust inflows at 22:56–23:01Z. ✅ Confirmed on-chain.
-- TRX sweep `TD64NDwZ...` received **~13,031 USDT from five distinct senders** within ~10 minutes (including a single **11,550 USDT** transfer at 22:55Z). ✅ Confirmed on-chain.
+- TRX sink `TD64NDwZ...` kept receiving: a 50-transaction page spanning 21:44–23:22Z showed **158,629 USDT inbound from 44 distinct senders, zero outbound** — and the balance reads ~461,900 USDT. ✅ Confirmed on-chain.
 - BTC accumulator gained another 0.0023 BTC at 22:37Z. ✅
 
-The pattern: **sweep → DEX-swap or exchange deposit → fresh consolidation addresses**. The wallet set we know is only the visible crust; fresh sweep addresses to watch: `0x7005b45DE07e1b70DCD38eE3A708CFD88A6c7f8e`, `0xfb6a6A1cDc9B01dea50aab8E85Da9Ab012E9B3Cf`, `TD64NDwZfQB6UASW2Xz6hWrz1T12p1pxL7`. ✅ Confirmed.
+The pattern: **sweep → DEX-swap or exchange deposit → fresh consolidation addresses**. Watch list: `0x7005b45DE07e1b70DCD38eE3A708CFD88A6c7f8e`, `0xfb6a6A1cDc9B01dea50aab8E85Da9Ab012E9B3Cf`, `TD64NDwZfQB6UASW2Xz6hWrz1T12p1pxL7` (sink), plus layers `TH8kxgUv...`, `TLFxe3jyg...`, funder `TWnudLaFP1BM...`. ✅ Confirmed.
 
 ## Link 6 — The remediation chain
 
@@ -145,6 +166,7 @@ l7bcsnwc7nzr3uo.icu   telemetry C2 leaked from obfuscated index.js         ✅
 moiubpagedocs.cc      cluster host                                         ✅
 netvigator.cc         cluster host (since 6 Oct)                           ✅
 blogforge.vu          cluster host                                         ⚠️
+1y69gy2mdzaltz1.icu      NEW C2, same SG host 34.87.36.58 (cert batch)              ✅
 k68k.xyz              kit default C2 (patched at runtime)                  ✅
 ```
 
@@ -161,6 +183,13 @@ k68k.xyz              kit default C2 (patched at runtime)                  ✅
 THvs6p56XkUiMkJeSc51cAP64u2RsTYqxa           TRX collector (created Mar 2026) ✅
 TD64NDwZfQB6UASW2Xz6hWrz1T12p1pxL7           TRX sweep        ✅
 19g9rZcPeiz8rUvyWpTRyXXhPnjsWrc3kW           BTC accumulator  ✅
+TWnudLaFP1BMKkkPCvVjjfnzrbzqvAgTG2       TRX funder (50k/3.5k Nov 16)   ⚠️
+TH8kxgUvRFDQTUYPTHv6XUjSNTeTmxHWbv       TRX intermediate (Aug+)        ⚠️
+TLFxe3jygjfLVJM6koqRUwCGYmBNGaVXHv       TRX intermediate (Nov 2+)      ⚠️
+TDnC6Qq6xusErGsUVfjHnZxHvfYNHCjkTm       TRX funder (99k Aug)           ⚠️
+TFRQz28WJ8tNjj3Spin1ZkcENwjhnGdouW       TRX funder (100k Aug)          ⚠️
+TXufTz8WDPgYZn94VaxhFV3wyeezMu2LoH       TRX funder (77,950 Nov 2)      ⚠️
+TMLQvDvpgxZ5zQGTadktRYWDpMjCz4DoYfv      older THvs6p56 sweep dest      ⚠️
 0x80787af194C33b74a811f5e5c549316269d7Ee1A   HitBTC hot wallet (cash-out sink) ✅
 ```
 
@@ -177,6 +206,6 @@ TD64NDwZfQB6UASW2Xz6hWrz1T12p1pxL7           TRX sweep        ✅
 
 ## Postscript — the chain is still moving
 
-At the time of writing (23:03Z, 16 Nov), the C2 was still serving `track.js`, the wallets were still consolidating, and the vendor had not yet published. This repository will be updated as the chain moves: a 24-hour scheduled re-check tracks C2 liveness, wallet sweeps, exchange deposits, and advisory status. The chain does not end because the bundles got cleaned — it ends when the money stops moving and the panel is found. It hasn't ended.
+At the last checks (23:30Z, 16 Nov), the C2 was still serving `track.js`, the TRX sink held **~$462k USDT** with no outbound, a **second SG C2 domain** (`1y69gy2mdzaltz1.icu`) had been identified, and the vendor had not yet published. This repository will be updated as the chain moves: a 24-hour scheduled re-check tracks C2 liveness, wallet sweeps, exchange deposits, and advisory status. The chain does not end because the bundles got cleaned — it ends when the money stops moving and the panel is found. It hasn't ended.
 
 ---

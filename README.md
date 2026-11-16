@@ -206,6 +206,6 @@ TMLQvDvpgxZ5zQGTadktRYWDpMjCz4DoYfv      older THvs6p56 sweep dest      ⚠️
 
 ## Postscript — the chain is still moving
 
-At the last checks (23:30Z, 16 Nov), the C2 was still serving `track.js`, the TRX sink held **~$462k USDT** with no outbound, a **second SG C2 domain** (`1y69gy2mdzaltz1.icu`) had been identified, and the vendor had not yet published. This repository will be updated as the chain moves: a 24-hour scheduled re-check tracks C2 liveness, wallet sweeps, exchange deposits, and advisory status. The chain does not end because the bundles got cleaned — it ends when the money stops moving and the panel is found. It hasn't ended.
+At the last checks (23:38Z, 16 Nov): the C2 was **still live** — root decoy `闲言碎语` served HTTP 200 at 23:34Z, `card.php` answered 204 at 23:37Z, scan corpus at 233 — the TRX sink held **462,029 USDT** and was still filling (no outbound), a **second SG C2 domain** (`1y69gy2mdzaltz1.icu`) had been identified, the BTC accumulator was still growing with no sweep, and the vendor had not yet published. This repository will be updated as the chain moves: a 24-hour scheduled re-check tracks C2 liveness, wallet sweeps, exchange deposits, and advisory status. The chain does not end because the bundles got cleaned — it ends when the money stops moving and the panel is found. It hasn't ended.
 
 ---

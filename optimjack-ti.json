@@ -1,0 +1,288 @@
+{
+ "schema_version": "1.0",
+ "feed_name": "OPTIMJACK / Optimizely CDN supply-chain IOC feed",
+ "campaign": "OPTIMJACK",
+ "generated": "2026-11-16T23:46:49Z",
+ "confidence_legend": {
+  "0.8-1.0": "confirmed (verified live/on-chain)",
+  "0.6-0.7": "highly likely",
+  "0.5-0.55": "suspicious / layer wallet, attribution unproven"
+ },
+ "source_repo": "https://github.com/jejex0/optimjack-chain",
+ "pullable_urls": [
+  "https://raw.githubusercontent.com/jejex0/optimjack-chain/master/optimjack-ti.json",
+  "https://jejex0.github.io/optimjack-chain/optimjack-ti.json"
+ ],
+ "domains": [
+  {
+   "value": "1688360.cc",
+   "verdict": "malicious",
+   "confidence": 0.95,
+   "first_seen": "2026-11-16T05:23:00Z",
+   "last_seen": "2026-11-16T23:02:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "eil786npto9u5bq.icu",
+   "verdict": "malicious",
+   "confidence": 0.9,
+   "first_seen": "2026-11-16T05:23:00Z",
+   "last_seen": "2026-11-16T22:30:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "5vobauua3ojpklx.icu",
+   "verdict": "malicious",
+   "confidence": 0.85,
+   "first_seen": "2026-11-09T00:00:00Z",
+   "last_seen": "2026-11-16T22:30:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "l7bcsnwc7nzr3uo.icu",
+   "verdict": "malicious",
+   "confidence": 0.85,
+   "first_seen": "2026-10-28T00:00:00Z",
+   "last_seen": "2026-11-16T22:30:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "moiubpagedocs.cc",
+   "verdict": "malicious",
+   "confidence": 0.8,
+   "first_seen": "2026-11-14T00:00:00Z",
+   "last_seen": "2026-11-16T22:30:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "netvigator.cc",
+   "verdict": "suspicious",
+   "confidence": 0.7,
+   "first_seen": "2026-10-06T00:00:00Z",
+   "last_seen": "2026-11-16T22:30:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "blogforge.vu",
+   "verdict": "suspicious",
+   "confidence": 0.6,
+   "first_seen": "2026-11-16T00:00:00Z",
+   "last_seen": "2026-11-16T22:30:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "k68k.xyz",
+   "verdict": "malicious",
+   "confidence": 0.8,
+   "first_seen": "2026-01-01T00:00:00Z",
+   "last_seen": "2026-11-16T22:30:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "1y69gy2mdzaltz1.icu",
+   "verdict": "malicious",
+   "confidence": 0.85,
+   "first_seen": "2026-11-16T00:00:00Z",
+   "last_seen": "2026-11-16T21:48:00Z",
+   "note": "Tron money-engine layers (pre-existing clipper/cash op; sink TD64NDwZ ~462k USDT)"
+  }
+ ],
+ "ips": [
+  {
+   "value": "136.113.106.136",
+   "verdict": "malicious",
+   "confidence": 0.9,
+   "first_seen": "2026-11-16T05:04:54Z",
+   "last_seen": "2026-11-16T23:02:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "34.87.36.58",
+   "verdict": "malicious",
+   "confidence": 0.8,
+   "first_seen": "2026-11-16T15:56:00Z",
+   "last_seen": "2026-11-16T23:26:00Z",
+   "note": "SG GCP host for eil786npto9u5bq.icu + 1y69gy2mdzaltz1.icu (TLS batch 15:56-15:57Z)"
+  }
+ ],
+ "wallets": [
+  {
+   "value": "0xC4026b06D82b0F0B363eda0642D61CfbDc17884e",
+   "verdict": "malicious",
+   "confidence": 0.85,
+   "first_seen": "2026-11-12T00:00:00Z",
+   "last_seen": "2026-11-16T13:03:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "0x7005b45DE07e1b70DCD38eE3A708CFD88A6c7f8e",
+   "verdict": "malicious",
+   "confidence": 0.85,
+   "first_seen": "2026-11-16T00:00:00Z",
+   "last_seen": "2026-11-16T23:01:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "0xfb6a6A1cDc9B01dea50aab8E85Da9Ab012E9B3Cf",
+   "verdict": "suspicious",
+   "confidence": 0.6,
+   "first_seen": "2026-11-14T00:00:00Z",
+   "last_seen": "2026-11-14T00:00:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "THvs6p56XkUiMkJeSc51cAP64u2RsTYqxa",
+   "verdict": "malicious",
+   "confidence": 0.85,
+   "first_seen": "2026-03-15T00:00:00Z",
+   "last_seen": "2026-11-16T15:45:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "TD64NDwZfQB6UASW2Xz6hWrz1T12p1pxL7",
+   "verdict": "malicious",
+   "confidence": 0.85,
+   "first_seen": "2026-11-16T00:00:00Z",
+   "last_seen": "2026-11-16T22:59:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "19g9rZcPeiz8rUvyWpTRyXXhPnjsWrc3kW",
+   "verdict": "malicious",
+   "confidence": 0.8,
+   "first_seen": "2026-11-16T00:00:00Z",
+   "last_seen": "2026-11-16T22:37:00Z",
+   "note": "Optimizely CDN supply-chain (cdn.optimizely.com tag injection); crypto clipper/skimmer; iOS RCE second stage"
+  },
+  {
+   "value": "TWnudLaFP1BMKkkPCvVjjfnzrbzqvAgTG2",
+   "verdict": "suspicious",
+   "confidence": 0.55,
+   "first_seen": "2026-10-05T00:00:00Z",
+   "last_seen": "2026-11-16T19:06:00Z",
+   "note": "Tron money-engine layers (pre-existing clipper/cash op; sink TD64NDwZ ~462k USDT)"
+  },
+  {
+   "value": "TH8kxgUvRFDQTUYPTHv6XUjSNTeTmxHWbv",
+   "verdict": "suspicious",
+   "confidence": 0.6,
+   "first_seen": "2026-08-04T00:00:00Z",
+   "last_seen": "2026-11-16T22:20:00Z",
+   "note": "Tron money-engine layers (pre-existing clipper/cash op; sink TD64NDwZ ~462k USDT)"
+  },
+  {
+   "value": "TLFxe3jygjfLVJM6koqRUwCGYmBNGaVXHv",
+   "verdict": "suspicious",
+   "confidence": 0.6,
+   "first_seen": "2026-11-02T00:00:00Z",
+   "last_seen": "2026-11-16T22:21:00Z",
+   "note": "Tron money-engine layers (pre-existing clipper/cash op; sink TD64NDwZ ~462k USDT)"
+  },
+  {
+   "value": "TDnC6Qq6xusErGsUVfjHnZxHvfYNHCjkTm",
+   "verdict": "suspicious",
+   "confidence": 0.5,
+   "first_seen": "2026-07-25T00:00:00Z",
+   "last_seen": "2026-08-06T00:00:00Z",
+   "note": "Tron money-engine layers (pre-existing clipper/cash op; sink TD64NDwZ ~462k USDT)"
+  },
+  {
+   "value": "TFRQz28WJ8tNjj3Spin1ZkcENwjhnGdouW",
+   "verdict": "suspicious",
+   "confidence": 0.5,
+   "first_seen": "2026-08-04T00:00:00Z",
+   "last_seen": "2026-08-04T00:00:00Z",
+   "note": "Tron money-engine layers (pre-existing clipper/cash op; sink TD64NDwZ ~462k USDT)"
+  },
+  {
+   "value": "TJUrkoyaEgHJK2P2eyNMzaSx8pKjEFaqyh",
+   "verdict": "suspicious",
+   "confidence": 0.5,
+   "first_seen": "2026-06-25T00:00:00Z",
+   "last_seen": "2026-06-25T00:00:00Z",
+   "note": "Tron money-engine layers (pre-existing clipper/cash op; sink TD64NDwZ ~462k USDT)"
+  },
+  {
+   "value": "TXufTz8WDPgYZn94VaxhFV3wyeezMu2LoH",
+   "verdict": "suspicious",
+   "confidence": 0.5,
+   "first_seen": "2026-11-02T00:00:00Z",
+   "last_seen": "2026-11-02T00:00:00Z",
+   "note": "Tron money-engine layers (pre-existing clipper/cash op; sink TD64NDwZ ~462k USDT)"
+  },
+  {
+   "value": "TMLQvDvpgSyx94maptc3TxvmCVtT5qHVup",
+   "verdict": "suspicious",
+   "confidence": 0.55,
+   "first_seen": "2026-03-24T00:00:00Z",
+   "last_seen": "2026-11-02T00:00:00Z",
+   "note": "Tron money-engine layers (pre-existing clipper/cash op; sink TD64NDwZ ~462k USDT)"
+  }
+ ],
+ "file_hashes": [
+  {
+   "name": "track.js",
+   "type": "sha256",
+   "value": "acdf428f9cc564a9d16ff2a4f67e9af53dfa1bced92b4925283c8151581091fb",
+   "url": "https://1688360.cc/track.js",
+   "verified": true,
+   "note": "live loader; differs from blog f7b84b9a (rotation)"
+  },
+  {
+   "name": "JIUJIU888/index.js",
+   "type": "sha256",
+   "value": "f33e040e5416be881f103186c226ad325381a287a6d0ee1f5e9fbfddcbc24507",
+   "url": "https://eil786npto9u5bq.icu/JIUJIU888/index.js",
+   "verified": true,
+   "note": "obfuscated boot; leaks l7bcsnwc7nzr3uo.icu"
+  },
+  {
+   "name": "B9/rce_loader.js",
+   "type": "sha256",
+   "value": "e027f69d350f83965519e5ad7d947807c17d763138eaa24d2042a2f5ac6f339e",
+   "url": "https://eil786npto9u5bq.icu/B9/rce_loader.js",
+   "verified": true,
+   "note": ""
+  },
+  {
+   "name": "C10/rce_loader_v5.js",
+   "type": "sha256",
+   "value": "d024dc37d8633382c3e2bed176132fd64322f4ce1c1bd11d563e700553c3b36c",
+   "url": "https://eil786npto9u5bq.icu/C10/rce_loader_v5.js",
+   "verified": true,
+   "note": "same bytes as boot.js (kit serves one file at two paths)"
+  },
+  {
+   "name": "D11/b.html (Coruna stage1)",
+   "type": "sha256",
+   "value": "1bd3c4ed902616fefc29e92b8d8f0eaa0e8eaa96b4064f3d6c80b6e13977d3b6",
+   "url": "https://eil786npto9u5bq.icu/D11/b.html",
+   "verified": true,
+   "note": "matches recorded D11_coruna hash"
+  },
+  {
+   "name": "boot.js",
+   "type": "sha256",
+   "value": "d024dc37d8633382c3e2bed176132fd64322f4ce1c1bd11d563e700553c3b36c",
+   "url": "https://5vobauua3ojpklx.icu/boot.js",
+   "verified": false,
+   "note": "recorded at capture 22:33Z; identical to rce_loader_v5"
+  },
+  {
+   "name": "rce_worker_18.6.js",
+   "type": "sha256",
+   "value": "54a54421cbdadc281a224713a97e3ccd9ba6dd3e2578e7e72864a47052ab4d00",
+   "url": "eil786npto9u5bq.icu (worker stage)",
+   "verified": false,
+   "note": "recorded at capture 22:33Z"
+  },
+  {
+   "name": "A8 loader (a8_34ef)",
+   "type": "sha256",
+   "value": "d437b6799fc200f02832ee70a377b361471468bd887a133e26eb52832b7b2664",
+   "url": "eil786npto9u5bq.icu (A8)",
+   "verified": false,
+   "note": "recorded at capture 22:33Z"
+  }
+ ]
+}

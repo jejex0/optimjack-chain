@@ -195,7 +195,24 @@ TMLQvDvpgxZ5zQGTadktRYWDpMjCz4DoYfv      older THvs6p56 sweep dest      ⚠️
 
 **File / path markers** — `track.js`, `card.php`, `hit.php`, `html2canvas.min.js` (C2), `boot.js`, `rce_loader.js`, `rce_loader_v5.js`, `rce_worker_18.{4,5,6,7}.js`, `post_exploit.js`, `native_bridge.js`, `nb_daemon.dylib`, trigger `evil_43818.heic`. ✅
 
-> Full live-payload SHA256 hashes and raw fetch evidence are preserved in the originating case's evidence store (`/home/jeje/.panoptes` — tool-output, graph, IOC ledger), not reproduced here.
+**Live payload SHA256 hashes (captured 22:27–22:33Z, 16 Nov; none executed — byte-verified from retained evidence)**
+
+```
+track.js (https://1688360.cc/track.js)                 acdf428f9cc564a9d16ff2a4f67e9af53dfa1bced92b4925283c8151581091fb
+index.js (https://eil786npto9u5bq.icu/JIUJIU888/index.js) f33e040e5416be881f103186c226ad325381a287a6d0ee1f5e9fbfddcbc24507
+rce_loader.js (…/B9/rce_loader.js)                     e027f69d350f83965519e5ad7d947807c17d763138eaa24d2042a2f5ac6f339e
+rce_loader_v5.js (…/C10/rce_loader_v5.js)              d024dc37d8633382c3e2bed176132fd64322f4ce1c1bd11d563e700553c3b36c
+D11/b.html (Coruna stage1)                              1bd3c4ed902616fefc29e92b8d8f0eaa0e8eaa96b4064f3d6c80b6e13977d3b6
+boot.js (5vobauua3ojpklx.icu; same file as rce_loader_v5) d024dc37d8633382c3e2bed176132fd64322f4ce1c1bd11d563e700553c3b36c
+rce_worker_18.6.js                                     54a54421cbdadc281a224713a97e3ccd9ba6dd3e2578e7e72864a47052ab4d00
+A8 loader (a8_34ef)                                    d437b6799fc200f02832ee70a377b361471468bd887a133e26eb52832b7b2664
+```
+
+⚠️ **Hashes are time-limited**: the operator rotated `track.js` between the blog's version and the live capture (different from `f7b84b9a…`), so hash matching works for the capture window, not forever. **Domains, IPs and wallets are the durable signals.**
+
+Machine-readable IOC feed (pullable for TI pipelines): **`optimjack-ti.json`** in this repository —
+- raw: `https://raw.githubusercontent.com/jejex0/optimjack-chain/master/optimjack-ti.json`
+- pages: `https://jejex0.github.io/optimjack-chain/optimjack-ti.json`
 
 ## Detection chain — what to look for
 

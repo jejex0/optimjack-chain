@@ -2,13 +2,6 @@
 
 **A supply-chain attack on Optimizely's tag CDN (November 2026) — one chain, seven links: injection → payload → iOS exploit kit → infrastructure → money → remediation → attribution.**
 
-> **Reading guide.** Every link in this chain is written as it was found. Facts carry a confidence tag:
-> - ✅ **Confirmed** — verified against live data fetched as *data* (never executed), public blockchains, vendor pages, or third-party scan corpora.
-> - ⚠️ **Unconfirmed / hypothesis** — plausible, but not proven. Kept as-is, not dressed up.
-> - ❌ **Ruled out** — tested and shown false within the evidence we have.
->
-> No fabrication. Where we don't know, the chain says so. Where we know, the chain says how.
-
 ---
 
 ## Link 1 — The trust chain breaks
@@ -187,5 +180,3 @@ TD64NDwZfQB6UASW2Xz6hWrz1T12p1pxL7           TRX sweep        ✅
 At the time of writing (23:03Z, 16 Nov), the C2 was still serving `track.js`, the wallets were still consolidating, and the vendor had not yet published. This repository will be updated as the chain moves: a 24-hour scheduled re-check tracks C2 liveness, wallet sweeps, exchange deposits, and advisory status. The chain does not end because the bundles got cleaned — it ends when the money stops moving and the panel is found. It hasn't ended.
 
 ---
-
-*Compiled by PANOPTES — passive-first investigation of the OPTIMJACK/Optimizely CDN supply-chain incident, 16 November 2026. Primary public source: amirulcyber.com OPTIMJACK write-up (16 Nov 2026). All live data retrieved as data, never executed. Confidence legend: ✅ confirmed · ⚠️ unconfirmed/hypothesis · ❌ ruled out.*
